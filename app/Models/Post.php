@@ -26,4 +26,10 @@ class Post extends Model
     {
        return $this->morphMany('App\Models\Image', 'imageable');
     }
+
+    // polymorphic one to many post dengan tag
+    public function tags()
+    {
+       return $this->morphToMany('App\Models\Tag', 'taggable');
+    }
 }
